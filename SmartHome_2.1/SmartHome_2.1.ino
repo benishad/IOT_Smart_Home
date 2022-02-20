@@ -21,7 +21,7 @@ Servo servo2; // 서보 객체 생성
 
 byte nuidPICC[4];
 
-char secretCode[] = {'1', '2', '3', '4'}; // 비밀번호
+char secretCode[] = {'1', '4', '7', '8'}; // 비밀번호
 int position = 0; // 비밀번호 대조 위치확인용
 int wrong = 0;  // 비밀번호 틀린 횟수
 
@@ -314,12 +314,12 @@ void setLocked(int locked) {
   if (locked) {
     servo1.attach(Servo1Pin);
     servo1.write(0);
-    delay(100);
+    delay(500);
     servo1.detach();
   } else {
     servo1.attach(Servo1Pin);
     servo1.write(180);
-    delay(100);
+    delay(500);
     servo1.detach();
   }
 }
@@ -329,7 +329,7 @@ void Motor(int locked) {
     digitalWrite(MotorC, LOW);
     digitalWrite(MotorD, HIGH);
     analogWrite(MotorPWM, 55);
-    delay(3000);
+    delay(4300);
     digitalWrite(MotorC, LOW);
     digitalWrite(MotorD, LOW);
     analogWrite(MotorPWM, 55);
@@ -337,7 +337,7 @@ void Motor(int locked) {
     digitalWrite(MotorC, HIGH);
     digitalWrite(MotorD, LOW);
     analogWrite(MotorPWM, 55);
-    delay(3000);
+    delay(4300);
     digitalWrite(MotorC, LOW);
     digitalWrite(MotorD, LOW);
     analogWrite(MotorPWM, 55);
